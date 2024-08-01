@@ -5,7 +5,7 @@ module.exports = {
     title: 'Chukwuka Ezem',
     description:
       'Chukwuka Ezem is a software engineer who specializes in building (and occasionally designing) exceptional digital experiences.',
-    siteUrl: 'https://brittanychiang.com', // No trailing slash allowed!
+    siteUrl: 'https://notchuks.netlify.app', // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
     twitterUsername: '@notchuks',
   },
@@ -44,13 +44,13 @@ module.exports = {
         path: `${__dirname}/content/`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `posts`,
-        path: `${__dirname}/content/posts`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `posts`,
+    //     path: `${__dirname}/content/posts`,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

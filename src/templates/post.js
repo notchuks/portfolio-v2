@@ -52,7 +52,7 @@ const StyledPostContent = styled.div`
 
 const PostTemplate = ({ data, location }) => {
   const { frontmatter, html } = data.markdownRemark;
-  const { title, date, tags } = frontmatter;
+  // const { title, date, tags } = frontmatter;
 
   return (
     <Layout location={location}>
@@ -64,7 +64,7 @@ const PostTemplate = ({ data, location }) => {
           <Link to="/pensieve">All memories</Link>
         </span>
 
-        <StyledPostHeader>
+        {/* <StyledPostHeader>
           <h1 className="medium-heading">{title}</h1>
           <p className="subtitle">
             <time>
@@ -83,7 +83,7 @@ const PostTemplate = ({ data, location }) => {
                 </Link>
               ))}
           </p>
-        </StyledPostHeader>
+        </StyledPostHeader> */}
 
         <StyledPostContent dangerouslySetInnerHTML={{ __html: html }} />
       </StyledPostContainer>
@@ -93,22 +93,22 @@ const PostTemplate = ({ data, location }) => {
 
 export default PostTemplate;
 
-PostTemplate.propTypes = {
-  data: PropTypes.object,
-  location: PropTypes.object,
-};
+// PostTemplate.propTypes = {
+//   data: PropTypes.object,
+//   location: PropTypes.object,
+// };
 
-export const pageQuery = graphql`
-  query($path: String!) {
-    markdownRemark(frontmatter: { slug: { eq: $path } }) {
-      html
-      frontmatter {
-        title
-        description
-        date
-        slug
-        tags
-      }
-    }
-  }
-`;
+// export const pageQuery = graphql`
+//   query($path: String!) {
+//     markdownRemark(frontmatter: { slug: { eq: $path } }) {
+//       html
+//       frontmatter {
+//         title
+//         description
+//         date
+//         slug
+//         tags
+//       }
+//     }
+//   }
+// `;
