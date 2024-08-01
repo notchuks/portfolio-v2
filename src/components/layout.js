@@ -27,24 +27,24 @@ const Layout = ({ children, location }) => {
     }
   };
 
-  // useEffect(() => {
-  //   if (isLoading) {
-  //     return;
-  //   }
+  useEffect(() => {
+    if (isLoading) {
+      return;
+    }
 
-  //   if (location.hash) {
-  //     const id = location.hash.substring(1); // location.hash without the '#'
-  //     setTimeout(() => {
-  //       const el = document.getElementById(id);
-  //       if (el) {
-  //         el.scrollIntoView();
-  //         el.focus();
-  //       }
-  //     }, 0);
-  //   }
+    if (location.hash) {
+      const id = location.hash.substring(1); // location.hash without the '#'
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView();
+          el.focus();
+        }
+      }, 0);
+    }
 
-  //   handleExternalLinks();
-  // }, [isLoading]);
+    handleExternalLinks();
+  }, [isLoading]);
 
   return (
     <>
@@ -58,6 +58,7 @@ const Layout = ({ children, location }) => {
             Skip to Content
           </a>
 
+          {isHome && (
             <StyledContent>
               <Nav isHome={isHome} />
               <Social isHome={isHome} />
@@ -68,6 +69,7 @@ const Layout = ({ children, location }) => {
                 <Footer />
               </div>
             </StyledContent>
+          )}
         </ThemeProvider>
       </div>
     </>
